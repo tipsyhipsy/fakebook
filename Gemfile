@@ -17,6 +17,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt'
 
 gem 'mini_magick'
+gem 'carrierwave'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 
