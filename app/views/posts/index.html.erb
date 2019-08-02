@@ -1,0 +1,7 @@
+<h1>Posts#index</h1>
+
+<% @posts.each do |post| %>
+      <p><%= post.content %></p>
+      <%= link_to "編集", edit_post_path(post.id), data: {confirm: "編集しますか？"} %>
+      <%= link_to "削除", post_path(post.id), method: :delete, data:{confirm: "削除しますか？"} %>
+  <% end %>
