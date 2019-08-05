@@ -1,8 +1,25 @@
-<%=form_with(model: @post, local: true) do |f| %>
-    <div class="content_title">
-      <%= f.label :content %>
-      <%= f.text_field :content %>
-    </div>
-
-    <%= f.submit "投稿する" %>
+<%=form_with(model: @post, local: true, url:confirm_posts_path ) do |f| %>
+  <% if @post.errors.any? %>
+   <div id='error_explanation' >
+   <h2><%= @post.errors.count %>erros.</h2>
+    <ul>
+      <%= @post.erroors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
   <% end %>
+
+  <div class="content_title">
+    <%= f.label :content %>
+    <%= f.text_area :content, class:'form-control'%>
+  </div>
+  <div class="content_title">
+    <%= f.label :image %>
+    <%= image_tag(@post.image.url) if @post.image && @post.image.url %>
+    <%= f.file_field :image %>
+    <%= f.hidden_field :image_cache %>
+  </div>
+  <%= f.submit '投稿する', class:'btn btn-primary'%>
+<% end %>
+<%= link_to '一覧に戻る', posts_path %>
