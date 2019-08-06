@@ -11,7 +11,11 @@
   <body>
     <div class="container">
       <header class="navbar navbar-fixed-top">
-        <%= link_to "fakebook", posts_index_path(current_user.id), id: "logo" %>
+        <% if logged_in? %>
+          <%= link_to "fakebook", posts_index_path(current_user.id), id: "logo" %>
+        <% else %>
+          <%= link_to "fakebook", new_user_path, id: "logo" %>
+        <% end %>
         <nav>
           <ul class="nav navbar-nav navbar-right">
           <% if logged_in? %>

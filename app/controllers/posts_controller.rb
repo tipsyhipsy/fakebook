@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
   before_action :set_post, only:[:show, :edit, :update, :destroy]
   def index
-    @posts = Post.all
+    @user = current_user
+    @posts = Post.where(user_id: @user.id).all
   end
 
   def new
@@ -13,7 +14,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.build(post_params)
     if params[:back]
       render 'new'
     else
@@ -26,7 +27,7 @@ class PostsController < ApplicationController
   end
 
   def confirm
-    @post = Post.new(post_params)
+    @post = current_user.posts.build(post_params)
     render :new if @post.invalid?
   end
 
