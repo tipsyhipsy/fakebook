@@ -1,3 +1,54 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#logo_large {
+	width: 200px;
+	height: 50px;
+	margin: 10px;
+	float: left;
+}
+
+#logo_small {
+	width: 50px;
+	height: 50px;
+	float: left;
+	margin: 10px;
+}
+
+#search_form {
+	float: left;
+	margin-left: 50px;
+	position:relative;
+	max-width:300px;
+	top: 10px;
+	}
+
+#search_box {
+	height: 50px;
+	width: 40rem;
+	padding: 0 10px;
+	padding-right: 30px;
+	top: 10px;
+	left:0;
+	border-radius:2px;
+	outline:0;
+	background:#eee;
+	}
+
+#search_btn {
+	top: 25px;
+	position: fixed;
+	margin-left: 37rem;
+	background: none;
+	color:#666;
+	border:gray;
+	font-size:20px;
+	}
+
+#search_btn .fa-search {
+	font-size:20px;	
+	position:absolute;
+	top:30%;
+	left:30%;	
+	}
+
+#search_btn :hover {
+	color:#7fbfff;
+	}
