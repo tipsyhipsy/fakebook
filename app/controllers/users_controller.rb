@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     if @user.save
       log_in @user
       flash[:success] = "Welcome to fakebook!!"
-      redirect_to user_path(@user.id)
+      redirect_to posts_index_path(@user.id)
     else
       render 'new'
     end

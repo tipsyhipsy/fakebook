@@ -3,7 +3,7 @@
    <div id='error_explanation' >
    <h2><%= @post.errors.count %>erros.</h2>
     <ul>
-      <%= @post.erroors.full_messages.each do |message| %>
+      <% @post.errors.full_messages.each do |message| %>
       <li><%= message %></li>
       <% end %>
     </ul>
@@ -19,6 +19,7 @@
     <%= image_tag(@post.image.url) if @post.image && @post.image.url %>
     <%= f.file_field :image %>
     <%= f.hidden_field :image_cache %>
+    <p><%= f.check_box :remove_image %>画像を削除する</p>
   </div>
   <%= f.submit '投稿する', class:'btn btn-primary'%>
 <% end %>

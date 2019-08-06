@@ -7,7 +7,7 @@
       <td><%= post.content %></td>
       <td><%= post.image_cache %></td>
       <td><%= link_to '詳細', post_path(post.id) %></td>
-      <td><%= link_to '編集', edit_post_path(post.id), data: {confirm: "編集しますか？"} %></td>
+      <td><%= link_to '編集', edit_post_path(post.id) %></td>
       <td><%= link_to '削除', post_path(post.id), method: :delete, data:{confirm: "削除しますか？"} %></td>
     </tr>
   <% end %>
