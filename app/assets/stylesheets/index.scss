@@ -1,0 +1,73 @@
+.row {
+
+}
+
+.col {
+	flex-basis: 80%;
+	display: flex;
+	flex-direction: column;
+}
+
+ul {
+padding-top: 10px;
+list-style: none;
+}
+
+
+.content-post {
+	background-color: #fff;
+	padding: 30px;
+	width: 100%;
+	margin: 10px;
+	border-radius: 5px;
+	flex-grow: 1;
+	flex-shrink: 1;
+	box-shadow: 0 2px 5px #ccc;
+	box-sizing: border-box;
+	box-shadow: rgba(0, 0, 0, .2) 1px 1px 5px;
+}
+
+
+.posted-body {
+	background: #fff;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px #ccc;
+	margin: 10px;
+	width: 100%;
+	padding: 30px;
+	height: 200px;
+	flex-grow: 1;
+	flex-shrink: 1;
+	box-sizing: border-box;
+	box-shadow: rgba(0, 0, 0, .2) 1px 1px 5px;
+}
+
+
+.posted-header {
+	// float: left;
+}
+
+.posted-action {
+	float: right;
+}
+
+.posted-content {
+	text-align: center;
+	font-size: 2rem;
+}
+
+.posted-img {
+
+}
+
+.info {
+	background: #fff;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px #ccc;
+	width: auto;
+	padding: 30px;
+	flex-grow: 1;
+	flex-shrink: 1;
+	box-sizing: border-box;
+	box-shadow: rgba(0, 0, 0, .2) 1px 1px 5px;
+}

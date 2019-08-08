@@ -10,10 +10,9 @@
   </head>
 
   <body>
-    <div class="container">
       <header class="navbar navbar-fixed-top">
         <% if logged_in? %>
-          <%= link_to posts_index_path(current_user.id) do %>
+          <%= link_to posts_path(current_user.id) do %>
             <%= image_tag "logo_small", id: "logo_small" %>
           <% end %>
           <form id="search_form" action="http://localhost:3000/posts" method="get">
@@ -26,23 +25,20 @@
           <% end %>
         <% end %>
         <nav>
-        <ul class="nav navbar-nav navbar-right">
-        <% if logged_in? %>
-            <li><%= link_to "#{current_user.name}さん", user_path(current_user.id) %></li>
-            <li><%= link_to "Mypage", user_path(current_user.id) %></li>
-            <li><%= link_to "Logout",  session_path(current_user.id), method: :delete %></li>
-          <% else %>
-            <li><%= link_to "Singup", new_user_path  %></li>
-            <li><%= link_to "Login", new_session_path %></li>
-          <% end %>
+          <ul class="nav navbar-nav navbar-right">
+            <% if logged_in? %>
+              <li><%= link_to "#{current_user.name}さん", user_path(current_user.id) %></li>
+              <li><%= link_to "Mypage", user_path(current_user.id) %></li>
+              <li><%= link_to "Logout",  session_path(current_user.id), method: :delete %></li>
+            <% else %>
+              <li><%= link_to "Singup", new_user_path  %></li>
+              <li><%= link_to "Login", new_session_path %></li>
+            <% end %>
           </ul>
         </nav>
       </header>
-       <div>
-        <% flash.each do |key,value| %>
-          <%= content_tag(:div, value, class:"#{key}") %>
-        <% end %>
-       </div>
+    </div>
+    <div class="container">
       <%= yield %>
     </div>
   </body>

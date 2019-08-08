@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   def index
     @user = current_user
     @posts = Post.where(user_id: @user.id).all
+    @post = Post.new
   end
 
   def new
