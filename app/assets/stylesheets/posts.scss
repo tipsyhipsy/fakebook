@@ -1,11 +1,108 @@
-// Place all the styles related to the Posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 
 #logo {
 	color: #fff;
 }
 header ul a {
 	color: #fff;
-	
+}
+
+.nav-left li{
+	margin: 20px 0;
+	font-size: 2rem;
+}
+
+.nav-left ul li a :hover{
+	color: aquamarine;
+}
+
+.col {
+	flex-basis: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.error {
+	background-color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 5px;
+	max-width: 60%;
+	margin: auto;
+}
+
+#error_message {
+	color: red;
+	font-weight: bold;
+}
+
+ul {
+padding-top: 10px;
+list-style: none;
+}
+
+.post-content {
+	background-color: #fff;
+	box-shadow: 0 2px 5px #ccc;
+	box-shadow: rgba(0, 0, 0, .2) 1px 1px 5px;
+	padding: 30px;
+	margin: 10px;
+	border-radius: 5px;
+	box-sizing: border-box;
+}
+
+.posted-body {
+	background: #fff;
+	box-shadow: 0 2px 5px #ccc;
+	border-radius: 5px;
+	margin: 10px;
+	padding: 30px;
+	min-height: 200px;
+	box-sizing: border-box;
+	box-shadow: rgba(0, 0, 0, .2) 1px 1px 5px;
+}
+
+.posted-action {
+	float: right;
+	paddint: 10px;
+}
+
+.posted-content {
+	text-align: center;
+	font-size: 2rem;
+	// display: flex;
+	align-items: center;
+}
+
+.posted-img {
+	max-width: 100%;
+}
+
+.info {
+	background: #fff;
+	box-shadow: 0 2px 5px #ccc;
+	border-radius: 5px;
+	padding: 30px;
+	margin-top: 10px;
+	box-sizing: border-box;
+	box-shadow: rgba(0, 0, 0, .2) 1px 1px 5px;
+}
+
+.posted-edit {
+	background-color: #fff;
+	min-width: 100%;
+	min-height: 100%;
+	border-radius: 5px;
+	padding: 5%;
+}
+
+.edit-content {
+	border: black;
+	box-sizing: border-box;
+}
+
+.edit-img img {
+	max-width: 100%;
+	display: flex;
+	margin: auto;
 }

@@ -1,13 +1,17 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @post.content %>
-</p>
-<p>
-  <strong>Image:</strong>
-  <%= image_tag @post.image.url if @post.image? %>
-</p>
-
-<%= link_to "Edit", edit_post_path(@post) %>
-<%= link_to "Back", posts_path %>
+<div class="row">
+  <div class="col-md-12">
+  <p id="notice"><%= notice %></p>
+    <div class="posted-edit">
+      <div class="posted-action">
+        <%= link_to "Edit", edit_post_path(@post) %>
+        <%= link_to "Back", posts_path %>
+      </div>
+      <div class="edit-content">
+        <p><strong>Content:</strong></p>
+        <span><%= @post.content %></span>
+      </div>
+      <p><strong>Image:</strong></p>
+      <div class="edit-img"><%= image_tag @post.image.url if @post.image? %></div>
+    </div>
+  </div>
+</div>

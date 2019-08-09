@@ -1,41 +1,29 @@
 
 <div class="row">
   <nav class="col-md-3">
-    <ul>
-      <li><i class="far fa-file"></i> ニュース</li>
-      <li><i class="far fa-comments"></i> メッセージ</li>
-      <li><i class="far fa-calendar-alt"></i> カレンダー</li>
-      <li><i class="far fa-flag"></i> お気に入り</li>
-      <li><i class="fas fa-users"></i> グループ</li>
+    <ul class="nav-left">
+      <li><a herf="#"><i class="far fa-file"></i> ニュース</a></li>
+      <li><a herf="#"><i class="far fa-comments"></i> メッセージ</a></li>
+      <li><a herf="#"><i class="far fa-calendar-alt"></i> カレンダー</a></li>
+      <li><a herf="#"><i class="far fa-flag"></i> お気に入り</a></li>
+      <li><a herf="#"><i class="fas fa-users"></i> グループ</a></li>
     </ul>
   </nav>
   <div class="col-md-6">
     <%=form_with(model: @post, local: true, url: choose_new_or_edit ) do |f| %>
-      <% if @post.errors.any? %>
-        <div id='error_explanation' >
-          <h2><%= @post.errors.count %>erros.</h2>
-          <ul>
-            <% @post.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
-      <div class="content-post">
+      <div class="post-content">
         <%= f.label :投稿を作成する %>
         <%= f.text_area :content, class:'form-control'%>
-        <%= f.label :image %>
+        <%= f.label :画像 %>
         <%= image_tag(@post.image.url) if @post.image && @post.image.url %>
-        <%= f.file_field :image %>
+        <%= f.file_field :画像 %>
         <%= f.hidden_field :image_cache %>
-        <p><%= f.check_box :remove_image %>画像を削除する</p>
         <%= f.submit '投稿する', class:'btn btn-primary'%>
       </div>
     <% end %>
     <% @posts.each do |post| %>
       <div class="posted-body">
-        <div class="posted-header">
-          <%= "#{current_user.name}" %></p>
+        <div class="posted-header"><%= "#{current_user.name}" %>
           <div class="posted-action">
             <%= link_to '詳細', post_path(post.id) %>
             <%= link_to '編集', edit_post_path(post.id) %>
@@ -45,11 +33,16 @@
         <div class="posted-content">
           <%= "#{post.content}" %>
         </div>
-          <%= image_tag "#{post.image}", class:"posted-img img-responsive center-block" %>
+          <%= image_tag "#{post.image}", class:"posted-img center-block" %>
       </div>
     <% end %>
   </div>
-  <div class="info col-md-3">
+  <div class="info-field col-md-3">
+    <div class="info">
       <p>友達申請が届いています。</p>
+    </div>
+    <div class="info">
+      <p>友達申請が届いています。</p>
+    </div>
   </div>
 </div>

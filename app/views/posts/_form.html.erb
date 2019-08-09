@@ -1,25 +1,33 @@
-<%=form_with(model: @post, local: true, url: choose_new_or_edit ) do |f| %>
-  <% if @post.errors.any? %>
-    <div id='error_explanation' >
-      <h2><%= @post.errors.count %>erros.</h2>
-      <ul>
-        <% @post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+<div class="row">
+  <div class="error">
+    <div class="col-md-6">
+      <%=form_with(model: @post, local: true, url: choose_new_or_edit ) do |f| %>
+        <% if @post.errors.any? %>
+          <div id='error_explanation' >
+            <h2><%= @post.errors.count %>erros.</h2>
+            <ul>
+              <% @post.errors.full_messages.each do |message| %>
+              <li id='error_message'><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
         <% end %>
-      </ul>
+        <div class="post_edit">
+          <div class="edit_content">
+            <%= f.label :content %>
+            <%= f.text_area :content, class:'form-control'%>
+          </div>
+          <div class="edit-img">
+            <%= f.label :image %>
+            <%= image_tag(@post.image.url) if @post.image && @post.image.url %>
+            <%= f.file_field :image %>
+            <%= f.hidden_field :image_cache %>
+            <p><%= f.check_box :remove_image %>画像を削除する</p>
+          </div>
+        </div>
+        <%= f.submit '投稿する', class:'btn btn-primary'%>
+      <% end %>
+      <%= link_to '一覧に戻る', posts_path %>
     </div>
-  <% end %>
-  <div class="content_title">
-    <%= f.label :content %>
-    <%= f.text_area :content, class:'form-control'%>
   </div>
-  <div class="content_title">
-    <%= f.label :image %>
-    <%= image_tag(@post.image.url) if @post.image && @post.image.url %>
-    <%= f.file_field :image %>
-    <%= f.hidden_field :image_cache %>
-    <p><%= f.check_box :remove_image %>画像を削除する</p>
-  </div>
-  <%= f.submit '投稿する', class:'btn btn-primary'%>
-<% end %>
-<%= link_to '一覧に戻る', posts_path %>
+</div>

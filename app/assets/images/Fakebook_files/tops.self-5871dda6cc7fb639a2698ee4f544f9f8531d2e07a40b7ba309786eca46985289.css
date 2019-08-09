@@ -1,0 +1,30 @@
+/* line 1, /Users/setsuotokohorikawa/fakebook/app/assets/stylesheets/tops.scss */
+body {
+  height: 100%;
+  margin-top: 70px;
+  background-color: #dee1e2;
+}
+
+/* line 7, /Users/setsuotokohorikawa/fakebook/app/assets/stylesheets/tops.scss */
+.container {
+  height: 100%;
+  min-height: 100%;
+}
+
+/* line 12, /Users/setsuotokohorikawa/fakebook/app/assets/stylesheets/tops.scss */
+header {
+  background-color: #0322d1;
+  min-height: 70px;
+}
+
+/* line 17, /Users/setsuotokohorikawa/fakebook/app/assets/stylesheets/tops.scss */
+footer {
+  width: 100%;
+  background-color: #0322d1;
+  padding: 20px 0;
+  color: white;
+  margin: auto;
+  font-size: 12px;
+  position: absolute;
+  bottom: 0;
+}
