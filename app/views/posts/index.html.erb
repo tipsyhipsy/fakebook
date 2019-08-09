@@ -25,9 +25,9 @@
       <div class="posted-body">
         <div class="posted-header"><%= "#{current_user.name}" %>
           <div class="posted-action">
-            <%= link_to '詳細', post_path(post.id) %>
-            <%= link_to '編集', edit_post_path(post.id) %>
-            <%= link_to '削除', post_path(post.id), method: :delete, data:{confirm: "削除しますか？"} %>
+            <%= link_to "詳細", post_path(post.id) %>
+            <%= link_to "編集", edit_post_path(post.id) %>
+            <%= link_to "削除", post_path(post.id), method: :delete, data:{confirm: "削除しますか？"} %>
           </div>
         </div>
         <div class="posted-content">

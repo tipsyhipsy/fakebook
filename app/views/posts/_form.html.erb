@@ -14,13 +14,13 @@
         <% end %>
         <div class="post_edit">
           <div class="edit_content">
-            <%= f.label :content %>
+            <%= f.label :内容 %>
             <%= f.text_area :content, class:'form-control'%>
           </div>
           <div class="edit-img">
-            <%= f.label :image %>
+            <%= f.label :画像 %>
             <%= image_tag(@post.image.url) if @post.image && @post.image.url %>
-            <%= f.file_field :image %>
+            <%= f.file_field :画像 %>
             <%= f.hidden_field :image_cache %>
             <p><%= f.check_box :remove_image %>画像を削除する</p>
           </div>

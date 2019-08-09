@@ -3,14 +3,14 @@
   <p id="notice"><%= notice %></p>
     <div class="posted-edit">
       <div class="posted-action">
-        <%= link_to "Edit", edit_post_path(@post) %>
-        <%= link_to "Back", posts_path %>
+        <%= link_to "編集", edit_post_path(@post) %>
+        <%= link_to "戻る", posts_path %>
       </div>
       <div class="edit-content">
-        <p><strong>Content:</strong></p>
+        <p><strong>内容:</strong></p>
         <span><%= @post.content %></span>
       </div>
-      <p><strong>Image:</strong></p>
+      <p><strong>画像:</strong></p>
       <div class="edit-img"><%= image_tag @post.image.url if @post.image? %></div>
     </div>
   </div>
