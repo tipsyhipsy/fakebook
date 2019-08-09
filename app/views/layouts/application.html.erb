@@ -14,7 +14,7 @@
       <header class="navbar navbar-fixed-top">
         <% if logged_in? %>
           <%= link_to posts_path(current_user.id) do %>
-            <%= image_tag "logo_small", id: "logo_small" %>
+            <%= image_tag "logo_small.png", id: "logo_small" %>
           <% end %>
           <form id="search_form" action="http://localhost:3000/posts" method="get">
             <input id="search_box" type="text" placeholder="検索" />
