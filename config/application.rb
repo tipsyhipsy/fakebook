@@ -11,6 +11,8 @@ module Fakebook
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
     config.generators do |g|
+      g.assets false
+      g.helper false
       g.test_framework :rspec,
         fixtures: true,
         view_specs: false,
