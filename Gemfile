@@ -21,6 +21,7 @@ gem 'bcrypt'
 
 gem 'mini_magick'
 gem 'carrierwave'
+gem 'ransack'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 
